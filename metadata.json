@@ -1,0 +1,6 @@
+{
+  "name": "NoRegretsRVC",
+  "description": "Voice model training studio and custom Applio Kaggle fork builder with RVC HiFi-GAN and BigVGAN, Cloudflare tunnels, and automated checkpoint backups.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

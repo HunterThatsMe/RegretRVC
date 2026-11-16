@@ -1,0 +1,134 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg-canvas: #0d0405;
+  --bg-surface: #160709;
+  --bg-elevated: #200b0e;
+  --border-hairline: #47161d;
+  --border-strong: #6d202b;
+  --accent-red: #e51923;
+  --accent-red-hover: #ff2b35;
+  --accent-red-soft: rgba(229, 25, 35, 0.16);
+  --text-primary: #fdf7f7;
+  --text-secondary: #dfbfc3;
+  --text-muted: #ad8288;
+}
+
+@layer base {
+  html,
+  body {
+    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    letter-spacing: 0.005em;
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
+  }
+
+  code,
+  pre,
+  .font-mono {
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+input[type="number"].no-native-spin::-webkit-inner-spin-button,
+input[type="number"].no-native-spin::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"].no-native-spin {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type="range"].scarlet-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 999px;
+  background: #351015;
+  outline: none;
+}
+
+input[type="range"].scarlet-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: var(--accent-red);
+  border: 2px solid #fdf7f7;
+  cursor: pointer;
+  transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+input[type="range"].scarlet-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.12);
+}
+
+@keyframes scarletLogoPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 8px rgba(229, 25, 35, 0.24), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  }
+  50% {
+    box-shadow: 0 0 17px rgba(229, 25, 35, 0.56), inset 0 0 0 1px rgba(255, 110, 118, 0.25);
+  }
+}
+
+@keyframes scarletTabPulse {
+  0%,
+  100% {
+    opacity: 0.72;
+    box-shadow: 0 0 6px rgba(229, 25, 35, 0.32);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 12px rgba(255, 43, 53, 0.72);
+  }
+}
+
+@keyframes scarletIconBreath {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 2px rgba(229, 25, 35, 0.25));
+  }
+  50% {
+    filter: drop-shadow(0 0 7px rgba(255, 43, 53, 0.65));
+  }
+}
+
+.scarlet-logo-pulse {
+  animation: scarletLogoPulse 3.4s ease-in-out infinite;
+}
+
+.scarlet-tab-bar-pulse {
+  animation: scarletTabPulse 2.8s ease-in-out infinite;
+}
+
+.scarlet-icon-pulse {
+  animation: scarletIconBreath 2.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
